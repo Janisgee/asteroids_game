@@ -35,7 +35,9 @@ def main():
     clock.tick(60)
     # Time passed how many second
     dt = clock.get_time()/1000
-    # print(dt)
+
+    # Player movement update
+    player.update(dt)
 
 
 
