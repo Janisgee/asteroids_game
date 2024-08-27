@@ -50,8 +50,13 @@ def main():
     for obj in updatable_gp:
       obj.update(dt)
     
-    # Check if each asteroid collide with player
+    # Collide check
     for obj in asteroids_gp:
+      for shot in shot_gp:
+        if obj.check_collision(shot):
+          #.kill() method is build-in pygame
+          obj.split()
+          shot.kill()
       if obj.check_collision(player):
         print("Game over!")
         return
